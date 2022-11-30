@@ -1,0 +1,13 @@
+name = "OptiFabric"
+filename = "optifabric-1.13.16.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e7f69dbe60e7bb90933eec445e595d4304f237a6"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3961344
+project-id = 322385

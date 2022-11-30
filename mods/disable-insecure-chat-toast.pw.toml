@@ -1,0 +1,13 @@
+name = "Disable Insecure Chat Toast"
+filename = "DisableInsecureChatToast-mc1.19.1-1.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "3668a773d59b4676eb191b616693ab9a94b797c5"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3902787
+project-id = 648547
