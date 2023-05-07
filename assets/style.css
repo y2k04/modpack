@@ -1,0 +1,53 @@
+table, td, th {
+    border: 1px solid;
+}
+
+thead > tr {
+    width: 100%;
+    display: flex;
+}
+
+table {
+    width: 400px;
+    height: 500px;
+    border-collapse: collapse;
+}
+
+thead {
+    height: min-content;
+    display: flex;
+}
+
+tbody {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: block;
+    height: inherit;
+}
+
+th {
+    padding: 8px;
+    width: 100%;
+}
+
+td {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 100%;
+}
+
+.compatibilityTable {
+    display: flex;
+}
+
+#compatible, #incompatible {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    display: table;
+}
+
+#webConsole {
+    width: 800px;
+    height: 300px;
+    resize: none;
+}

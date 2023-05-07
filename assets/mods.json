@@ -1,0 +1,423 @@
+[
+    {
+        "name": "AdvancementInfo",
+        "id": "G1epq3jN",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Better Mount HUD",
+        "id": "kqJFAPU9",
+        "mod_type": "Fixes",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Bookshelf",
+        "id": "228525",
+        "mod_type": "Library",
+        "service": "curseforge",
+        "reported_compat": []
+    },
+    {
+        "name": "Borderless Mining",
+        "id": "kYq5qkSL",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Carpet Extra",
+        "id": "349240",
+        "mod_type": "Utility",
+        "service": "curseforge",
+        "reported_compat": []
+    },
+    {
+        "name": "Carpet Sky Additions",
+        "id": "3oX3JnAP",
+        "mod_type": "Gameplay",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Carpet Mod",
+        "id": "TQTTVgYE",
+        "mod_type": "Utility",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Chest Boat Patch",
+        "id": "1ZCQhSfC",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "ClientSideNoteblocks",
+        "id": "flmhXQgb",
+        "mod_type": "Fixes",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Cloth Config",
+        "id": "9s6osm5g",
+        "mod_type": "Library",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Collective",
+        "id": "e0M1UDsY",
+        "mod_type": "Library",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Disable Custom Worlds Advice",
+        "id": "HdwRs3kc",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Disable Insecure Chat Toast",
+        "id": "i090SePT",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Distant Horizons",
+        "id": "uCdwusMi",
+        "mod_type": "Gameplay",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "EntityCulling",
+        "id": "NNAgCjsB",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "1.6.2-1.19.4",
+                "mc_vers": ["23w12a", "23w13a", "23w13a_or_b", "23w14a", "23w16a", "23w17a", "23w18a"]
+            }
+        ]
+    },
+    {
+        "name": "ESSENTIAL Mod",
+        "id": "k2ZPuTBm",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Fabric API",
+        "id": "P7dR8mSH",
+        "mod_type": "Library",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Fabric Language Kotlin",
+        "id": "Ha28R6CL",
+        "mod_type": "Library",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "FerriteCore",
+        "id": "uXXizFIs",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "5.2.0-fabric",
+                "mc_vers": ["23w12a", "23w13a", "23w13a_or_b", "23w14a", "23w16a", "23w17a", "23w18a"]
+            }
+        ]
+    },
+    {
+        "name": "Forget Me Chunk",
+        "id": "vRXn3MrA",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Freecam",
+        "id": "557076",
+        "mod_type": "Utility",
+        "service": "curseforge",
+        "reported_compat": []
+    },
+    {
+        "name": "Inventory Totem",
+        "id": "yQj7xqEM",
+        "mod_type": "Utility",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Iris",
+        "id": "YL57xq9U",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Krypton",
+        "id": "fQEb0iXm",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "LambDynamicLights",
+        "id": "yBW8D80W",
+        "mod_type": "Gameplay",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Language Reload",
+        "id": "uLbm7CG6",
+        "mod_type": "Fixes",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "LazyDFU",
+        "id": "hvFnDODi",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "0.1.3",
+                "mc_vers": ["23w03a", "23w04a", "23w05a", "23w06a", "23w07a", "1.19.4-pre1", "1.19.4-pre2", "1.19.4-pre3", "1.19.4-pre4", "1.19.4-rc1", "1.19.4-rc2", "1.19.4-rc3", "1.19.4", "23w12a", "23w13a", "23w13a_or_b", "23w14a", "23w16a", "23w17a", "23w18a"]
+            }
+        ]
+    },
+    {
+        "name": "Litematica",
+        "id": "308892",
+        "mod_type": "Utility",
+        "service": "curseforge",
+        "reported_compat": []
+    },
+    {
+        "name": "Lithium",
+        "id": "gvQqBUqZ",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Logical Zoom",
+        "id": "8bOImuGU",
+        "mod_type": "Utility",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "MaLiLib",
+        "id": "303119",
+        "mod_type": "Library",
+        "service": "curseforge",
+        "reported_compat": []
+    },
+    {
+        "name": "MiniHUD",
+        "id": "244260",
+        "mod_type": "Utility",
+        "service": "curseforge",
+        "reported_compat": []
+    },
+    {
+        "name": "Mixin Conflict Helper",
+        "id": "MR1VIQJJ",
+        "mod_type": "Utility",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "1.2.0",
+                "mc_vers": ["23w03a", "23w04a", "23w05a", "23w06a", "23w07a", "1.19.4-pre1", "1.19.4-pre2", "1.19.4-pre3", "1.19.4-pre4", "1.19.4-rc1", "1.19.4-rc2", "1.19.4-rc3", "1.19.4", "23w12a", "23w13a", "23w13a_or_b", "23w14a", "23w16a", "23w17a", "23w18a"]
+            }
+        ]
+    },
+    {
+        "name": "Mod Menu",
+        "id": "mOgUt4GM",
+        "mod_type": "Utility",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "7.0.0-beta.2",
+                "mc_vers": ["23w18a"]
+            }
+        ]
+    },
+    {
+        "name": "MoreChatHistory",
+        "id": "8qkXwOnk",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "1.19.1-1.1.1",
+                "mc_vers": ["23w12a", "23w13a", "23w13a_or_b", "23w14a", "23w16a", "23w17a", "23w18a"]
+            }
+        ]
+    },
+    {
+        "name": "Mouse Wheelie",
+        "id": "u5Ic2U1u",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "No Chat Reports",
+        "id": "qQyHxfxd",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "No Resource Pack Warnings",
+        "id": "6xKUDQcB",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "No Telemetry",
+        "id": "hg77g4Pw",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "1.7.0",
+                "mc_vers": ["23w12a", "23w13a", "23w13a_or_b", "23w14a", "23w16a", "23w17a", "23w18a"]
+            }
+        ]
+    },
+    {
+        "name": "No Unused Chunks",
+        "id": "U8avpWmO",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "No Expensive",
+        "id": "2nz0kJ1N",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "ServerCore",
+        "id": "4WWQxlQP",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "1.3.5+1.19.4",
+                "mc_vers": ["23w12a", "23w13a", "23w13a_or_b", "23w14a", "23w16a", "23w17a", "23w18a"]
+            }
+        ]
+    },
+    {
+        "name": "Shulker Box Tooltip",
+        "id": "2M01OLQq",
+        "mod_type": "Utility",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Smooth Boot",
+        "id": "FWumhS4T",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Sodium",
+        "id": "AANobbMI",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Starlight",
+        "id": "H8CaAYZC",
+        "mod_type": "Performance",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "ToolTip Fix",
+        "id": "2RKFTmiB",
+        "mod_type": "Fixes",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "Tweakeroo",
+        "id": "297344",
+        "mod_type": "Utility",
+        "service": "curseforge",
+        "reported_compat": []
+    },
+    {
+        "name": "ViaFabricPlus",
+        "id": "rIC2XJV4",
+        "mod_type": "Utility",
+        "service": "modrinth",
+        "reported_compat": []
+    },
+    {
+        "name": "View Distance Fix",
+        "id": "nxrXbh5K",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "fabric-1.19.4-1.0.0",
+                "mc_vers": ["23w12a", "23w13a", "23w13a_or_b", "23w14a", "23w16a", "23w17a", "23w18a"]
+            }
+        ]
+    },
+    {
+        "name": "Xaero's Minimap",
+        "id": "263420",
+        "mod_type": "Utility",
+        "service": "curseforge",
+        "reported_compat": []
+    },
+    {
+        "name": "Xaero's World Map",
+        "id": "317780",
+        "mod_type": "Utility",
+        "service": "curseforge",
+        "reported_compat": []
+    },
+    {
+        "name": "Your Options Shall Be Respected (YOSBR)",
+        "id": "WwbubTsV",
+        "mod_type": "QoL",
+        "service": "modrinth",
+        "reported_compat": [
+            {
+                "version": "0.1.1",
+                "mc_vers": ["22w24a", "1.19.1-pre1", "1.19.1-rc1", "1.19.1-pre2", "1.19.1-pre3", "1.19.1-pre4", "1.19.1-pre5", "1.19.1-pre6", "1.19.1-rc2", "1.19.1-rc3", "1.19.1", "1.19.2-rc1", "1.19.2-rc2", "1.19.2", "22w42a", "22w43a", "22w44a", "22w45a", "22w46a", "23w03a", "1.19.3-pre1", "1.19.3-pre2", "1.19.3-pre3", "1.19.3-rc1", "1.19.3-rc2", "1.19.3-rc3", "1.19.3", "23w03a", "23w04a", "23w05a", "23w06a", "23w07a", "1.19.4-pre1", "1.19.4-pre2", "1.19.4-pre3", "1.19.4-pre4", "1.19.4-rc1", "1.19.4-rc2", "1.19.4-rc3", "1.19.4", "23w12a", "23w13a", "23w13a_or_b", "23w14a", "23w16a", "23w17a", "23w18a"]
+            }
+        ]
+    }
+]
