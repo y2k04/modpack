@@ -19,7 +19,7 @@ ModrinthAPI.GetModById = async id => await fetch(`https://api.modrinth.com/v2/pr
 ModrinthAPI.GetModVersions = async id => await fetch(`https://api.modrinth.com/v2/project/${id}/version?loaders=["fabric"]`, ModrinthAPI.Header).then(res => res.json());
 ModrinthAPI.GetModDependencies = async id => await fetch(`https://api.modrinth.com/v2/project/${id}/dependencies`, ModrinthAPI.Header).then(res => res.json());
 CurseForgeAPI.GetModById = async id => await fetch(`https://api.curseforge.com/v1/mods/${id}`, CurseForgeAPI.Header).then(res => res.json());
-const GetModsJSON = async () => await fetch("/assets/mods.json", ModrinthAPI.Header).then(res => res.json());
+const GetModsJSON = async () => await fetch("assets/mods.json", ModrinthAPI.Header).then(res => res.json());
 
 async function GetMCVersions() {
     var versions = (await ModrinthAPI.GetModById(ModsData.find(a => a.name == "Fabric API").id)).game_versions;
