@@ -96,7 +96,7 @@ async function ScanMods() {
                     compatibleModsList.appendChild(mod);
                     compatibleMods.push({
                         "name": ModsData[i].name,
-                        "url": `https://requests-proxy-y2k04.vercel.app/proxy?followRedirect=true&url=https://media.forgecdn.net/files/${modVer.fileId.toString().substring(0,4)}/${modVer.fileId.toString().substring(4,7)}/${modVer.filename}`
+                        "url": `https://api.allorigins.win/raw?url=https://mediafilez.forgecdn.net/files/${modVer.fileId.toString().substring(0,4)}/${modVer.fileId.toString().substring(4,7)}/${modVer.filename}`
                     });
                 } else {
                     var findCompat = ModsData[i].reported_compat.find(d => d.mc_vers.find(e => e == SelectedMCVersion));
@@ -106,7 +106,7 @@ async function ScanMods() {
                         compatibleModsList.appendChild(mod);
                         compatibleMods.push({
                             "name": ModsData[i].name,
-                            "url": `https://requests-proxy-y2k04.vercel.app/proxy?followRedirect=true&url=https://media.forgecdn.net/files/${findCompat.fileId.toString().substring(0,4)}/${findCompat.fileId.toString().substring(4,7)}/${filename}`
+                            "url": `https://api.allorigins.win/raw?url=https://mediafilez.forgecdn.net/files/${findCompat.fileId.toString().substring(0,4)}/${findCompat.fileId.toString().substring(4,7)}/${filename}`
                         });
                     }
                 }
