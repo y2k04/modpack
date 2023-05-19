@@ -20,17 +20,16 @@ ModrinthAPI.GetModVersions = async id => await fetch(`https://api.modrinth.com/v
 ModrinthAPI.GetModDependencies = async id => await fetch(`https://api.modrinth.com/v2/project/${id}/dependencies`, ModrinthAPI.Header).then(res => res.json());
 CurseForgeAPI.GetModById = async id => await fetch(`https://api.curseforge.com/v1/mods/${id}`, CurseForgeAPI.Header).then(res => res.json());
 const GetModsJSON = async () => await fetch("assets/mods.json", ModrinthAPI.Header).then(res => res.json());
+const GetMCVersions = async () => await fetch("https://piston-meta.mojang.com/mc/game/version_manifest_v2.json", ModrinthAPI.Header).then(res => res.json());
 
-async function GetMCVersions() {
-    var versions = (await ModrinthAPI.GetModById(ModsData.find(a => a.name == "Fabric API").id)).game_versions;
+async function SortMCVersions() {
+    var versions = (await GetMCVersions()).versions;
     for (var i = 0; i < versions.length; i++) {
-        if (versions[i][2] == "w" || versions[i].includes("-rc") || versions[i].includes("-pre"))
-            MCSnapshots.push(versions[i]);
+        if (versions[i].type == "snapshot")
+            MCSnapshots.push(versions[i].id);
         else
-            MCReleases.push(versions[i]);
+            MCReleases.push(versions[i].id);
     }
-    MCReleases = MCReleases.reverse();
-    MCSnapshots = MCSnapshots.reverse();
     PopulateMCVersionSelector("release");
     MCVersionSelector.removeAttribute("disabled");
 }
@@ -147,7 +146,7 @@ async function zipMods() {
     webConsole.value = "";
     MCVerTypeSelector.value = "release";
     ModsData = await GetModsJSON();
-    await GetMCVersions();
+    await SortMCVersions();
     MCVersionSelector.value = "";
     MCVerTypeSelector.addEventListener("input", () => PopulateMCVersionSelector(MCVerTypeSelector.value));
     MCVersionSelector.addEventListener("input", async () => {
