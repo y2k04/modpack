@@ -160,5 +160,13 @@ async function zipMods() {
         MCVersionSelector.removeAttribute("disabled");
         downloadButton.removeAttribute("disabled");
     });
-    downloadButton.addEventListener("click", async () => await zipMods());
+    downloadButton.addEventListener("click", async () => {
+        MCVerTypeSelector.setAttribute("disabled", "");
+        MCVersionSelector.setAttribute("disabled", "");
+        downloadButton.setAttribute("disabled", "");
+        await zipMods();
+        MCVerTypeSelector.removeAttribute("disabled");
+        MCVersionSelector.removeAttribute("disabled");
+        downloadButton.removeAttribute("disabled");
+    });
 })();
