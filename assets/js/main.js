@@ -9,6 +9,7 @@ var ModrinthAPI = {},
     webConsole = document.getElementById("webConsole"),
     compatibleModsList = document.getElementById("compatible"),
     incompatibleModsList = document.getElementById("incompatible"),
+    downloadButton = document.getElementById("download"),
     compatibleMods = [],
     zip = new JSZip();
 
@@ -152,9 +153,12 @@ async function zipMods() {
     MCVersionSelector.addEventListener("input", async () => {
         MCVerTypeSelector.setAttribute("disabled", "");
         MCVersionSelector.setAttribute("disabled", "");
+        downloadButton.setAttribute("disabled", "");
         SelectedMCVersion = MCVersionSelector.value;
         await ScanMods();
         MCVerTypeSelector.removeAttribute("disabled");
         MCVersionSelector.removeAttribute("disabled");
+        downloadButton.removeAttribute("disabled");
     });
+    downloadButton.addEventListener("click", async () => await zipMods());
 })();
