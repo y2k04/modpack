@@ -64,7 +64,7 @@
         "reported_compat": [
             {
                 "version": "4.3.1",
-                "mc_vers": ["23w12a", "23w13a"]
+                "mc_vers": ["23w12a", "23w13a", "1.20-pre6"]
             }
         ]
     },
