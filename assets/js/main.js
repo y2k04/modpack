@@ -94,7 +94,7 @@ async function ScanMods() {
             try {
                 if (modVer != undefined) {
                     webConsole.value += `yes (${modVer.filename})`;
-                    var downloadURL = await (CurseForgeAPI.GetModDownloadURL(ModsData[i].id, modVer.fileId.toString())).data;
+                    var downloadURL = (await CurseForgeAPI.GetModDownloadURL(ModsData[i].id, modVer.fileId.toString())).data;
                     compatibleModsList.appendChild(mod);
                     compatibleMods.push({
                         "name": ModsData[i].name,
@@ -103,7 +103,7 @@ async function ScanMods() {
                 } else {
                     var findCompat = ModsData[i].reported_compat.find(d => d.mc_vers.find(e => e == SelectedMCVersion));
                     if (findCompat.mc_vers.find(d => d == SelectedMCVersion) != undefined) {
-                        var downloadURL = await (CurseForgeAPI.GetModDownloadURL(ModsData[i].id, findCompat.fileId.toString())).data;
+                        var downloadURL = (await CurseForgeAPI.GetModDownloadURL(ModsData[i].id, findCompat.fileId.toString())).data;
                         webConsole.value += `yes (${findCompat.version})`;
                         compatibleModsList.appendChild(mod);
                         compatibleMods.push({
