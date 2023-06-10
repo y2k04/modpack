@@ -6,22 +6,24 @@ var ModrinthAPI = {},
     SelectedMCVersion = "",
     MCVersionSelector = document.getElementById("mc_ver"),
     MCVerTypeSelector = document.getElementById("mc_ver_type"),
+    scanModsButton = document.getElementById("scan"),
+    downloadButton = document.getElementById("download"),
     webConsole = document.getElementById("webConsole"),
     compatibleModsList = document.getElementById("compatible"),
     incompatibleModsList = document.getElementById("incompatible"),
-    downloadButton = document.getElementById("download"),
     compatibleMods = [],
     zip = new JSZip();
 
 ModrinthAPI.Header = { method: "GET" };
 CurseForgeAPI.Header = { method: "GET", headers: { "x-api-key": "$2a$10$X7aJaQsgK0c4LKrSMhWDEuIGIsOswL.lko63jo4eLdvd1DtNol9F2" } };
 
-ModrinthAPI.GetModById = async id => await fetch(`https://api.modrinth.com/v2/project/${id}`, ModrinthAPI.Header).then(res => res.json());
-ModrinthAPI.GetModVersions = async id => await fetch(`https://api.modrinth.com/v2/project/${id}/version?loaders=["fabric"]`, ModrinthAPI.Header).then(res => res.json());
-ModrinthAPI.GetModDependencies = async id => await fetch(`https://api.modrinth.com/v2/project/${id}/dependencies`, ModrinthAPI.Header).then(res => res.json());
+ModrinthAPI.GetModById = async id => await fetch(`https://api.modrinth.com/v2/project/${id}`, { method: "GET" }).then(res => res.json());
+ModrinthAPI.GetModVersions = async id => await fetch(`https://api.modrinth.com/v2/project/${id}/version?loaders=["fabric"]`, { method: "GET" }).then(res => res.json());
+ModrinthAPI.GetModDependencies = async id => await fetch(`https://api.modrinth.com/v2/project/${id}/dependencies`, { method: "GET" }).then(res => res.json());
 CurseForgeAPI.GetModById = async id => await fetch(`https://api.curseforge.com/v1/mods/${id}`, CurseForgeAPI.Header).then(res => res.json());
-const GetModsJSON = async () => await fetch("assets/mods.json", ModrinthAPI.Header).then(res => res.json());
-const GetMCVersions = async () => await fetch("https://piston-meta.mojang.com/mc/game/version_manifest_v2.json", ModrinthAPI.Header).then(res => res.json());
+CurseForgeAPI.GetModDownloadURL = async (modId, fileId) => await fetch(`https://api.curseforge.com/v1/mods/${modId}/files/${fileId}/download-url`, CurseForgeAPI.Header).then(res => res.json());
+const GetModsJSON = async () => await fetch("assets/mods.json", { method: "GET" }).then(res => res.json());
+const GetMCVersions = async () => await fetch("https://piston-meta.mojang.com/mc/game/version_manifest_v2.json", { method: "GET" }).then(res => res.json());
 
 async function SortMCVersions() {
     var versions = (await GetMCVersions()).versions;
@@ -93,20 +95,21 @@ async function ScanMods() {
             try {
                 if (modVer != undefined) {
                     webConsole.value += `yes (${modVer.filename})`;
+                    var downloadURL = await (CurseForgeAPI.GetModDownloadURL(ModsData[i].id, modVer.fileId.toString())).data;
                     compatibleModsList.appendChild(mod);
                     compatibleMods.push({
                         "name": ModsData[i].name,
-                        "url": `https://api.allorigins.win/raw?url=https://mediafilez.forgecdn.net/files/${modVer.fileId.toString().substring(0,4)}/${modVer.fileId.toString().substring(4,7)}/${modVer.filename}`
+                        "url": `https://api.allorigins.win/raw?url=${downloadURL}`
                     });
                 } else {
                     var findCompat = ModsData[i].reported_compat.find(d => d.mc_vers.find(e => e == SelectedMCVersion));
                     if (findCompat.mc_vers.find(d => d == SelectedMCVersion) != undefined) {
-                        var filename = modData.latestFilesIndexes.find(e => e.fileId == findCompat.fileId).filename;
+                        var downloadURL = await (CurseForgeAPI.GetModDownloadURL(ModsData[i].id, findCompat.fileId.toString())).data;
                         webConsole.value += `yes (${findCompat.version})`;
                         compatibleModsList.appendChild(mod);
                         compatibleMods.push({
                             "name": ModsData[i].name,
-                            "url": `https://api.allorigins.win/raw?url=https://mediafilez.forgecdn.net/files/${findCompat.fileId.toString().substring(0,4)}/${findCompat.fileId.toString().substring(4,7)}/${filename}`
+                            "url": `https://api.allorigins.win/raw?url=${downloadURL}`
                         });
                     }
                 }
@@ -146,27 +149,38 @@ async function zipMods() {
 (async () => {
     webConsole.value = "";
     MCVerTypeSelector.value = "release";
+    MCVersionSelector.value = "";
     ModsData = await GetModsJSON();
     await SortMCVersions();
-    MCVersionSelector.value = "";
-    MCVerTypeSelector.addEventListener("input", () => PopulateMCVersionSelector(MCVerTypeSelector.value));
-    MCVersionSelector.addEventListener("input", async () => {
+    MCVerTypeSelector.addEventListener("input", () => {
+        MCVersionSelector.setAttribute("disabled", "");
+        scanModsButton.setAttribute("disabled", "");
+        PopulateMCVersionSelector(MCVerTypeSelector.value);
+    });
+    MCVersionSelector.addEventListener("input", () => {
+        SelectedMCVersion = MCVersionSelector.value;
+        scanModsButton.removeAttribute("disabled");
+    });
+    scanModsButton.addEventListener("click", async () => {
         MCVerTypeSelector.setAttribute("disabled", "");
         MCVersionSelector.setAttribute("disabled", "");
+        scanModsButton.setAttribute("disabled", "");
         downloadButton.setAttribute("disabled", "");
-        SelectedMCVersion = MCVersionSelector.value;
         await ScanMods();
         MCVerTypeSelector.removeAttribute("disabled");
         MCVersionSelector.removeAttribute("disabled");
+        scanModsButton.removeAttribute("disabled");
         downloadButton.removeAttribute("disabled");
     });
     downloadButton.addEventListener("click", async () => {
         MCVerTypeSelector.setAttribute("disabled", "");
         MCVersionSelector.setAttribute("disabled", "");
+        scanModsButton.setAttribute("disabled", "");
         downloadButton.setAttribute("disabled", "");
         await zipMods();
         MCVerTypeSelector.removeAttribute("disabled");
         MCVersionSelector.removeAttribute("disabled");
+        scanModsButton.removeAttribute("disabled");
         downloadButton.removeAttribute("disabled");
     });
 })();
