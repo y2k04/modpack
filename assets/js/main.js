@@ -14,7 +14,6 @@ var ModrinthAPI = {},
     compatibleMods = [],
     zip = new JSZip();
 
-ModrinthAPI.Header = { method: "GET" };
 CurseForgeAPI.Header = { method: "GET", headers: { "x-api-key": "$2a$10$X7aJaQsgK0c4LKrSMhWDEuIGIsOswL.lko63jo4eLdvd1DtNol9F2" } };
 
 ModrinthAPI.GetModById = async id => await fetch(`https://api.modrinth.com/v2/project/${id}`, { method: "GET" }).then(res => res.json());
