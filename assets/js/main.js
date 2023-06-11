@@ -155,6 +155,7 @@ async function zipMods() {
         MCVersionSelector.setAttribute("disabled", "");
         scanModsButton.setAttribute("disabled", "");
         PopulateMCVersionSelector(MCVerTypeSelector.value);
+        MCVersionSelector.removeAttribute("disabled");
     });
     MCVersionSelector.addEventListener("input", () => {
         SelectedMCVersion = MCVersionSelector.value;
